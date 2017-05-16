@@ -161,6 +161,8 @@ double GetRMSE3(vector<int> ptpairs,CvSeq* CurrentKeypoints,CvSeq* PreKeypoints,
 
 CvPoint2D32f persp_xform_pt3( CvPoint2D32f pt, CvMat* T );
 
+
+
 void Cut_Count_Overlap( int ilayer );  //通过小图匹配获取两图重叠区域，并对重叠区域进行分块统计特征点数量。
 
 void ImageCut(const char* pszSrcFile, const char* pszDstFile, int iStartX, int iStartY, int iSizeX, int iSizeY,const char* pszFormat);////对图像进行裁切
