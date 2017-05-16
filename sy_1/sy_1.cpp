@@ -46,7 +46,6 @@ double t3;
 vector<CvMat*> H_1;///暂时没有用到
 vector<CvMat*> H_2;///用以存储H矩阵
 
-
 CvSeq* objectKeypoints = 0, * objeceDescriptors = 0;  ///保存图像的特征点及描述信息
 CvSeq* imageKeypoints = 0, * imageDescriptors = 0;
 
