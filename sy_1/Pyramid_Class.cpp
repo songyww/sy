@@ -106,7 +106,7 @@ bool PyramidBase::CreatePyramid()
 	/*      Generate overviews.                                             */  
 	/* -------------------------------------------------------------------- */  
 	if (nLevelCount > 0 &&  
-		GDALBuildOverviews( InFile,pszResampling, nLevelCount, anLevels,  
+		GDALBuildOverviews( InFile,pszResampling, nLevelCount , anLevels,  
 		0, NULL, pfnProgress, pProcess ) != CE_None )  
 	{  
 		if (pProcess != NULL)  

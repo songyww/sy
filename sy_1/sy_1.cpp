@@ -1070,12 +1070,9 @@ void Cut_Count_Overlap(int ilayer)		//传入的参数ilayer表示是对simage_repath[ilay
 		point0.x= iscale*h1;///不行，应该把这些数都改为浮点数
 		point0.y = iscale*h2;
 		rePoint.push_back(point0);
-
 	//	rectangle(img[0],cvPoint(h1,h2),cvPoint(h1+hx,h2+hy),cvScalar(0,255,255),2,4,0 );
 	//	imshow(atom_window0,img[0]);
 		ImageCut(simage_repath[0].c_str(),Overlap1.c_str(),point0.x,point0.y,iscale*hx,iscale*hy,"GTiff");
-		
-
 		//待配准图像的裁剪
 		CvPoint2D64f point00;
 		point0.x = 0;///不行，应该把这些数都改为浮点数
@@ -1097,19 +1094,13 @@ void Cut_Count_Overlap(int ilayer)		//传入的参数ilayer表示是对simage_repath[ilay
 	//	rectangle(img[0],cvPoint(h1+hx,h2),cvPoint(image1_xsize-hx,h2+hy),cvScalar(0,255,255),2,4,0 );
 	//	imshow(atom_window1,img[0]);
 		ImageCut(simage_repath[0].c_str(),Overlap1.c_str(),point1.x,point1.y,iscale*(image1_xsize-2*hx),iscale*hy,"GTiff");
-
-
 		CvPoint2D64f point11;
 		point11.x = iscale*hx;///不行，应该把这些数都改为浮点数
 		point11.y = 0;
 		senPoint.push_back(point11);
-
 	//	rectangle(img[1],cvPoint(hx,0),cvPoint(dx-hx,hy),cvScalar(255,255,0),2,4,0 );
 	//	imshow(atom1_window1,img[1]);
 		ImageCut(simage_senpath[0].c_str(),Overlap2.c_str(),point11.x,point11.y,iscale*(dx-hx*2),iscale*hy,"GTiff");
-
-
-
 		//waitKey(0);
 		break;
 	case 2:
@@ -1117,12 +1108,9 @@ void Cut_Count_Overlap(int ilayer)		//传入的参数ilayer表示是对simage_repath[ilay
 		point2.x =iscale*(image1_xsize-hx);///不行，应该把这些数都改为浮点数
 		point2.y = iscale*h2;
 		rePoint.push_back(point2);
-
 	//	rectangle(img[0],cvPoint(image1_xsize-hx,h2),cvPoint(image1_xsize,h2+hy),cvScalar(0,255,255),2,4,0 );
 	//	imshow(atom_window2,img[0]);
 		ImageCut(simage_repath[0].c_str(),Overlap1.c_str(),point2.x,point2.y,iscale*hx,iscale*hy,"GTiff");
-
-
 		CvPoint2D64f point22;
 		point22.x = iscale*(dx-hx);///不行，应该把这些数都改为浮点数
 		point22.y = 0;
@@ -1131,8 +1119,6 @@ void Cut_Count_Overlap(int ilayer)		//传入的参数ilayer表示是对simage_repath[ilay
 	//	rectangle(img[1],cvPoint(dx-hx,0),cvPoint(dx,hy),cvScalar(255,255,0),2,4,0 );
 	//	imshow(atom1_window2,img[1]);
 		ImageCut(simage_senpath[0].c_str(),Overlap2.c_str(),point22.x,point22.y,iscale*hx,iscale*hy,"GTiff");
-
-
 		//waitKey(0);
 		break;
 	case 3:
@@ -1144,17 +1130,13 @@ void Cut_Count_Overlap(int ilayer)		//传入的参数ilayer表示是对simage_repath[ilay
 	//	rectangle(img[0],cvPoint(h1,h2+hy),cvPoint(h1+hx,image1_ysize-hy),cvScalar(0,255,255),2,4,0 );
 	//	imshow(atom_window3,img[0]);
 		ImageCut(simage_repath[0].c_str(),Overlap1.c_str(),point3.x,point3.y,iscale*hx,iscale*hy,"GTiff");
-		
 		CvPoint2D64f point33;
 		point33.x = 0;///不行，应该把这些数都改为浮点数
 		point33.y = iscale*hy;
 		senPoint.push_back(point33);
-
 	//	rectangle(img[1],cvPoint(0,hy),cvPoint(hx,dy-hy),cvScalar(255,255,0),2,4,0 );
 	//	imshow(atom1_window3,img[1]);
 		ImageCut(simage_senpath[0].c_str(),Overlap2.c_str(),point33.x,point33.y,iscale*hx,iscale*(dy-2*hy),"GTiff");
-
-
 		//waitKey(0);
 		break;
 	case 4:	
@@ -1162,7 +1144,6 @@ void Cut_Count_Overlap(int ilayer)		//传入的参数ilayer表示是对simage_repath[ilay
 		point4.x = iscale*(h1+hx);///不行，应该把这些数都改为浮点数
 		point4.y = iscale*(h2+hy);
 		rePoint.push_back(point4);
-
 	//	rectangle(img[0],cvPoint(h1+hx,h2+hy),cvPoint(image1_xsize-hx,image1_ysize-hy),cvScalar(0,255,255),2,4,0 );
 	//	imshow(atom_window4,img[0]);
 		ImageCut(simage_repath[0].c_str(),Overlap1.c_str(),point4.x,point4.y,iscale*(image1_xsize-2*hx),iscale*(image1_ysize-2*hy),"GTiff");
@@ -1175,10 +1156,6 @@ void Cut_Count_Overlap(int ilayer)		//传入的参数ilayer表示是对simage_repath[ilay
 //		rectangle(img[1],cvPoint(hx,hy),cvPoint(dx-hx,dy-hy),cvScalar(255,255,0),2,4,0 );
 //		imshow(atom1_window4,img[1]);
 		ImageCut(simage_senpath[0].c_str(),Overlap2.c_str(),point44.x,point44.y,iscale*(dx-2*hx),iscale*(dy-2*hy),"GTiff");
-
-
-
-
 		//waitKey(0);
 		break;
 	case 5:
@@ -1361,7 +1338,7 @@ void sy_1::BigMapRegistration()
 	///缩略图匹配的两种选择策略：第一种是默认的选择（我们自己设定合适的大小进行匹配）；第二种是给定的选择；所以需要判断
 	///
 	int i = 1;
-	string reImage,senImage,resuImage;//这三个量分别用于临时存储用以匹配的图像路径，并传递给图像配准的函数
+	string reImage,senImage;//这三个量分别用于临时存储用以匹配的图像路径，并传递给图像配准的函数
 	for ( i; i ++ ; i < simage_repath.size())
 	{
 		IplImage * image = cvLoadImage(simage_repath[i].c_str());
